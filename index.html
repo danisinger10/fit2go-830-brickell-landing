@@ -1,657 +1,605 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Exclusive personal training and wellness services for tenants of 830 Brickell, offered by Fit2Go. Schedule your complimentary fitness consultation today.">
-    <title>Exclusive Fitness for 830 Brickell Tenants | Fit2Go Personal Training</title>
-    <!-- <link rel="icon" href="path/to/your/favicon.ico"> -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        /* --- Global Reset & Variables --- */
-        :root {
-            --fit2go-dark-green: #14880C;
-            --fit2go-light-green: #09D200;
-            --fit2go-white: #FFFFFF;
-            --fit2go-black: #000000;
-            --text-primary: #333333;
-            --text-secondary: #555555;
-            --bg-light-gray: #f8f9fa;
-            --border-color: #dee2e6;
-            --font-primary: 'Roboto', sans-serif;
-            --font-headings: 'Montserrat', sans-serif;
-        }
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Fit2Go Landing - VENDORS</title> 
+  <meta content="Exclusive fitness and wellness services for the tenants of 830 Brickell, brought to you by Fit2Go." name="description">
+  <meta content="fitness, wellness, 830 Brickell, Fit2Go, personal training, yoga, corporate wellness" name="keywords">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-        html {
-            scroll-behavior: smooth;
-        }
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-        body {
-            font-family: var(--font-primary);
-            color: var(--text-primary);
-            background-color: var(--fit2go-white);
-            line-height: 1.7;
-            font-size: 16px;
-        }
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
 
-        /* --- Typography --- */
-        h1, h2, h3, h4, h5, h6 {
-            font-family: var(--font-headings);
-            color: var(--fit2go-dark-green);
-            font-weight: 700;
-            line-height: 1.4;
-            margin-bottom: 0.75em;
-        }
-        h1 { font-size: 3rem; }
-        h2 { font-size: 2.25rem; text-align: center; margin-bottom: 1.75em; }
-        h3 { font-size: 1.5rem; color: var(--fit2go-dark-green); }
-        p {
-            margin-bottom: 1.1rem;
-            color: var(--text-secondary);
-            font-size: 1rem;
-        }
-        a {
-            color: var(--fit2go-dark-green);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        a:hover {
-            color: var(--fit2go-light-green);
-        }
+  <link href="assets/css/main.css" rel="stylesheet">
 
-        /* --- Layout & Container --- */
-        .container {
-            width: 90%;
-            max-width: 1140px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
+  <style>
+    /*--------------------------------------------------------------
+    # Leadership Section (New Styles)
+    --------------------------------------------------------------*/
+    .leadership-section {
+      padding: 60px 0;
+      /* background: #f8f9fa; /* Optional: A slightly different background for this section. Uses var(--surface-color) or similar from main.css if defined */
+    }
 
-        section {
-            padding: 80px 0;
-        }
+    .leadership-section .section-title h2 {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      position: relative;
+      color: var(--heading-color); /* Assuming --heading-color is defined in main.css */
+      text-align: center; 
+    }
 
-        .section-bg-light {
-            background-color: var(--bg-light-gray);
-        }
+    .leadership-section .section-title h2::after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 50px;
+      height: 3px;
+      background: var(--accent-color); /* Assuming --accent-color is defined */
+      bottom: 0;
+      left: calc(50% - 25px); 
+    }
 
-        /* --- Navigation Bar --- */
-        .navbar {
-            background-color: var(--fit2go-white);
-            padding: 1rem 0;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            width: 100%;
-        }
-        .navbar-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .navbar-logo {
-            max-height: 45px;
-            vertical-align: middle;
-        }
-        .nav-menu {
-            list-style: none;
-            display: flex;
-            align-items: center;
-        }
-        .nav-item {
-            margin-left: 28px;
-        }
-        .nav-link {
-            font-family: var(--font-headings);
-            font-weight: 600;
-            color: var(--fit2go-black);
-            font-size: 0.9rem;
-            padding: 5px 0;
-            position: relative;
-        }
-        .nav-link:hover, .nav-link.active {
-            color: var(--fit2go-light-green);
-        }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--fit2go-light-green);
-            transition: width 0.3s ease;
-        }
-        .nav-link:hover::after, .nav-link.active::after {
-            width: 100%;
-        }
-        .nav-cta {
-            margin-left: 28px;
-        }
+    .leadership-section .section-title p {
+      text-align: center;
+      margin-bottom: 40px; 
+      color: var(--default-color); /* Assuming --default-color is defined */
+    }
 
-        /* --- Buttons --- */
-        .btn {
-            display: inline-block;
-            font-family: var(--font-headings);
-            font-weight: 600;
-            text-align: center;
-            vertical-align: middle;
-            cursor: pointer;
-            border: 2px solid transparent;
-            padding: 0.85rem 1.85rem;
-            font-size: 0.95rem;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 0.75px;
-        }
-        .btn-primary {
-            background-color: var(--fit2go-dark-green);
-            color: var(--fit2go-white);
-            border-color: var(--fit2go-dark-green);
-        }
-        .btn-primary:hover {
-            background-color: var(--fit2go-light-green);
-            border-color: var(--fit2go-light-green);
-            color: var(--fit2go-black);
-            transform: translateY(-3px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--fit2go-dark-green);
-            border-color: var(--fit2go-dark-green);
-        }
-        .btn-secondary:hover {
-            background-color: var(--fit2go-dark-green);
-            color: var(--fit2go-white);
-            transform: translateY(-3px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
+    .director-profile {
+      margin-bottom: 40px;
+      padding: 30px;
+      background: var(--contrast-color); /* Assuming --contrast-color is defined (e.g. white) */
+      border-radius: 8px;
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .director-profile:hover {
+        transform: translateY(-5px);
+    }
 
-        /* --- Hero Section --- */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://www.fit2gopt.com/wp-content/uploads/2025/05/830-gym-hero.png') no-repeat center center/cover;
-            color: var(--fit2go-white);
-            padding: 100px 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            min-height: 80vh;
-        }
-        .hero-content h1 {
-            color: var(--fit2go-white);
-            font-size: 3.25rem;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.65);
-            margin-bottom: 0.5em;
-        }
-        .hero-content .subtitle {
-            font-size: 1.3rem;
-            margin-bottom: 2.25rem;
-            max-width: 780px;
-            margin-left: auto;
-            margin-right: auto;
-            font-weight: 400;
-            opacity: 0.95;
-            color: var(--fit2go-white);
-            text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
-        }
-        .hero .btn-primary {
-            padding: 1rem 2.5rem;
-            font-size: 1.1rem;
-        }
+    .director-profile img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border: 5px solid var(--accent-color); 
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .director-profile h3 {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--heading-color); 
+      margin-top: 20px;
+      margin-bottom: 8px;
+    }
+
+    .director-profile h4 {
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--accent-color); 
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .director-profile p.lead {
+      font-size: 17px; 
+      color: var(--default-color);
+      line-height: 1.7;
+      font-weight: 400; 
+    }
+
+    .instructor-feature {
+      background: var(--contrast-color);
+      border-radius: 8px;
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+      overflow: hidden; 
+      transition: transform 0.3s ease;
+    }
+
+    .instructor-feature:hover {
+        transform: translateY(-5px);
+    }
+    
+    .instructor-feature .instructor-image-wrapper img {
+      height: 100%; 
+      min-height: 300px; 
+      max-height: 480px; 
+      width: 100%;
+      object-fit: cover; 
+    }
+    
+    /* Applying border radius to the wrapper for better control with image */
+    .instructor-feature .instructor-image-wrapper.image-on-right { 
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        overflow: hidden; /* To make sure image inside also gets clipped */
+    }
+     .instructor-feature .instructor-image-wrapper.image-on-left { 
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+        overflow: hidden; /* To make sure image inside also gets clipped */
+    }
 
 
-        /* --- About Partnership Section --- */
-        .about-partnership .content-wrapper {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 50px;
-        }
-        .about-partnership .text-content {
-            flex: 1;
-            min-width: 300px;
-        }
-        .about-partnership .image-content {
-            flex: 1;
-            min-width: 300px;
-        }
-        .about-partnership .image-content img {
-            width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-        }
-        .about-partnership .text-content h3 {
-            margin-bottom: 0.75em;
-            font-size: 1.75rem;
-        }
+    .instructor-feature .instructor-content {
+      height: 100%; 
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
 
-        /* --- Services Section --- */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-top: 20px;
-        }
-        .service-card {
-            background-color: var(--fit2go-white);
-            padding: 35px 30px;
-            border-radius: 12px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.07);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 35px rgba(0,0,0,0.1);
-        }
-        .service-card h3 {
-            margin-bottom: 15px;
-            font-size: 1.4rem;
-        }
-        .service-card p {
-            font-size: 0.95rem;
-            margin-bottom: 15px;
-            flex-grow: 1;
-        }
-        .service-card ul {
-            list-style: none;
-            padding-left: 0;
-            margin-top: 10px;
-        }
-        .service-card ul li {
-            font-size: 0.9rem;
-            margin-bottom: 10px;
-            padding-left: 28px; 
-            position: relative; /* Crucial for ::before positioning */
-            color: var(--text-secondary);
-            line-height: 1.5;
-        }
-        .service-card ul li::before {
-            content: '✔'; /* Direct UTF-8 Heavy Checkmark */
-            color: var(--fit2go-light-green);
-            font-weight: bold; /* Optional: makes it bolder if font supports */
-            position: absolute;
-            left: 0;
-            font-size: 1.1em; /* Adjust size as needed */
-            top: 1px; /* Adjust vertical alignment */
-        }
+    .instructor-feature .instructor-content h3 {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--heading-color);
+      margin-bottom: 15px;
+    }
 
-        /* --- Team Section --- */
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-        .team-member-card {
-            background-color: var(--fit2go-white);
-            padding: 35px 30px;
-            border-radius: 12px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .team-member-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
-        }
-        .team-member-card img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            object-fit: cover;
-            object-position: center;
-            margin-bottom: 25px;
-            border: 6px solid var(--fit2go-white);
-            box-shadow: 0 0 0 4px var(--fit2go-light-green);
-        }
-        .team-member-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 8px;
-        }
-        .team-member-card .title {
-            font-family: var(--font-primary);
-            font-size: 0.95rem;
-            color: var(--fit2go-light-green);
-            font-weight: 700;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 0.75px;
-        }
-        .team-member-card p {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
+    .instructor-feature .instructor-content p {
+      font-size: 16px;
+      color: var(--default-color);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
 
-        /* --- As Featured In Section --- */
-        #featured h2 {
-            font-size: 1.6rem; 
-            color: #6c757d;
-            font-weight: 600; 
-            border-bottom: none; 
-            margin-bottom: 2rem;
-        }
-        .featured-logos-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 40px 55px;
-            margin-top: 20px;
-        }
-        .featured-logos-container img {
-            max-height: 48px;
-            filter: grayscale(100%) contrast(0.5) brightness(1.3);
-            opacity: 0.65;
-            transition: filter 0.3s ease, opacity 0.3s ease;
-        }
-        .featured-logos-container img:hover {
-            filter: grayscale(0%);
-            opacity: 1;
-        }
+    .instructor-feature .btn-outline-primary {
+      color: var(--accent-color);
+      border-color: var(--accent-color);
+    }
+    .instructor-feature .btn-outline-primary:hover {
+      background-color: var(--accent-color);
+      color: var(--contrast-color); 
+    }
 
-        /* --- Final CTA Section --- */
-        .final-cta-section {
-            background: linear-gradient(rgba(20, 136, 12, 0.9), rgba(9, 210, 0, 0.9)), url('https://www.fit2gopt.com/wp-content/uploads/2025/05/media-entrance-1.jpg') no-repeat center center/cover;
-            color: var(--fit2go-white);
-            text-align: center;
-            border-radius: 15px;
-            margin: 40px auto;
-            padding: 70px 30px;
-        }
-        .final-cta-section h2 {
-            color: var(--fit2go-white);
-            border-bottom: none;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        .final-cta-section p {
-            font-size: 1.2rem;
-            margin-bottom: 2.5rem;
-            color: var(--fit2go-white);
-            opacity: 0.95;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .final-cta-section .btn-primary {
-            background-color: var(--fit2go-white);
-            color: var(--fit2go-dark-green);
-            border-color: var(--fit2go-white);
-            font-size: 1.15rem;
-            padding: 1.1rem 2.75rem;
-        }
-        .final-cta-section .btn-primary:hover {
-            background-color: var(--fit2go-black);
-            color: var(--fit2go-white);
-            border-color: var(--fit2go-black);
-        }
-        .final-cta-section .cta-subtext {
-            font-size: 0.95rem;
-            margin-top: 1.75rem;
-            opacity: 0.85;
-            font-weight: 500;
-        }
+    /* Responsive adjustments for Leadership Section */
+    @media (max-width: 991.98px) { /* Medium devices (tablets, less than 992px) */
+      .director-profile {
+        padding: 25px;
+      }
+      .director-profile h3 { font-size: 24px; }
+      .director-profile h4 { font-size: 17px; }
+      .director-profile p.lead { font-size: 16px; }
 
-        /* --- Footer --- */
-        .footer {
-            background-color: var(--fit2go-black);
-            color: #adb5bd;
-            padding: 60px 0 40px 0;
-            text-align: center;
-        }
-        .footer-logo {
-            max-height: 50px;
-            margin-bottom: 1.5rem;
-            filter: brightness(0) invert(1);
-        }
-        .footer p {
-            font-size: 0.9rem;
-            margin-bottom: 0.6rem;
-            color: #adb5bd;
-        }
-        .footer a {
-            color: var(--fit2go-light-green);
-            font-weight: 500;
-        }
-        .footer a:hover {
-            color: var(--fit2go-white);
-            text-decoration: underline;
-        }
-        .footer .footer-links {
-            margin-bottom: 1.25rem;
-        }
-        .footer .footer-links a {
-            margin: 0 12px;
-        }
+      .instructor-feature .instructor-image-wrapper {
+        border-radius: 8px 8px 0 0 !important; /* Top corners rounded when stacked */
+      }
+      .instructor-feature .instructor-image-wrapper img {
+        max-height: 350px; 
+      }
+      .instructor-feature .instructor-content {
+        padding: 25px !important; 
+        text-align: center;
+      }
+      .instructor-feature .btn-outline-primary {
+        margin: 0 auto; 
+        display: table; 
+      }
+    }
 
-        /* --- Responsive Adjustments --- */
-        @media (max-width: 992px) {
-            h1 { font-size: 2.75rem; }
-            .hero-content h1 { font-size: 2.8rem; }
-            .hero-content .subtitle { font-size: 1.2rem; }
-            .about-partnership .text-content, .about-partnership .image-content {
-                flex-basis: 100%;
-            }
-            .about-partnership .image-content img { margin-top: 30px; }
-            .navbar-container { flex-direction: column; align-items: center; }
-            .nav-menu { margin-top: 20px; flex-direction: column; align-items: center; width: 100%;}
-            .nav-item { margin-left: 0; margin-bottom: 12px; width: auto; } 
-            .nav-link { display: block; padding: 8px 10px; text-align: center; } 
-            .nav-cta { margin-left: 0; margin-top:15px; display:block; text-align:center;}
-        }
+    @media (max-width: 767.98px) { /* Small devices (landscape phones, less than 768px) */
+      .leadership-section .section-title h2 { font-size: 28px; }
+      .leadership-section .section-title p { font-size: 15px; margin-bottom: 30px; }
+      .director-profile { padding: 20px; }
+      .director-profile img { width: 150px; height: 150px; }
+      .director-profile h3 { font-size: 22px; }
+      .director-profile h4 { font-size: 16px; }
+      .director-profile p.lead { font-size: 15px; }
 
-        @media (max-width: 768px) {
-            section { padding: 60px 0; }
-            h1 { font-size: 2.3rem; }
-            h2 { font-size: 2rem; }
-            .hero-content h1 { font-size: 2.4rem; }
-            .hero { min-height: auto; padding: 80px 0 60px; }
-            .services-grid { grid-template-columns: 1fr; }
-            .team-grid { grid-template-columns: 1fr; }
-            .final-cta-section h2 { font-size: 2.1rem; }
-            .final-cta-section { margin-left: 15px; margin-right: 15px; padding: 50px 20px; }
-            .featured-logos-container img { max-height: 40px; }
-        }
+      .instructor-feature .instructor-content h3 { font-size: 20px; }
+      .instructor-feature .instructor-content p { font-size: 15px; }
+      .instructor-feature .instructor-image-wrapper img {
+        max-height: 300px; 
+      }
+    }
+  </style>
 
-        @media (max-width: 576px) {
-            body { font-size: 15px; }
-            h1 { font-size: 2rem; }
-            .hero-content h1 { font-size: 2.1rem; }
-            .hero-content .subtitle { font-size: 1.05rem; }
-            .btn { padding: 0.7rem 1.5rem; font-size: 0.9rem; }
-            .hero .btn-primary { padding: 0.85rem 2rem; font-size: 1rem; }
-            .final-cta-section .btn-primary { padding: 0.9rem 1.75rem; font-size: 1rem;}
-            .footer { padding: 40px 0 30px; }
-            .team-member-card img { width: 150px; height: 150px; }
-        }
-    </style>
 </head>
-<body>
 
-    <nav class="navbar">
-        <div class="container navbar-container">
-            <a href="#"> 
-                <img src="https://www.fit2gopt.com/wp-content/uploads/2019/05/Contrast-logo.png" alt="Fit2Go Personal Training Logo" class="navbar-logo">
-            </a>
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
-                <li class="nav-item"><a href="#team" class="nav-link">Your Team</a></li>
-                <li class="nav-item nav-cta">
-                    <a href="https://fit2go-brickell.youcanbook.me" target="_blank" class="btn btn-primary">Book Consultation</a>
-                </li>
-            </ul>
+<body class="index-page">
+
+  <header id="header" class="header sticky-top">
+    <div class="branding d-flex align-items-center">
+      <div class="container position-relative d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <img src="assets/img/logo-fit2go.png" alt="Fit2Go Logo">
+        </a>
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="#hero" class="active">Home<br></a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Gallery</a></li>
+            <li><a href="#leadership">Leadership</a></li> 
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <section id="hero" class="hero section">
+      <img src="assets/img/hero-bg-830.jpg" alt="Modern fitness center at 830 Brickell" data-aos="fade-in">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-10">
+            <h2 data-aos="fade-up" data-aos-delay="100">Elevate Your Performance, Exclusively at 830 Brickell.</h2>
+            <p data-aos="fade-up" data-aos-delay="200">Welcome to your premium fitness & wellness experience, powered by Fit2Go.</p>
+            <br data-aos="fade-up" data-aos-delay="300">
+            <a href="#about" class="btn-get-started" data-aos="fade-up" data-aos-delay="300">Discover Your Benefits</a>
+          </div>
         </div>
-    </nav>
-
-    <header class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Elevate Your Performance. Exclusively at 830 Brickell.</h1>
-                <p class="subtitle">
-                    Welcome, 830 Brickell Tenants. Fit2Go Personal Training offers a bespoke wellness experience, seamlessly integrated into your demanding schedule, right within your prestigious workplace.
-                </p>
-                <a href="https://fit2go-brickell.youcanbook.me" target="_blank" class="btn btn-primary">Schedule Your Complimentary Consultation</a>
+      </div>
+    </section><section id="about" class="about section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row align-items-xl-center gy-5">
+          <div class="col-xl-5 content">
+            <h3>A Premier Partnership for Peak Professionals</h3>
+            <h2>The Standard of Excellence, Redefined for 830 Brickell Tenants.</h2>
+            <p>Fit2Go is proud to partner with 830 Brickell to offer an unparalleled, on-site fitness and wellness program tailored to the demanding lifestyles of its tenants. Our mission is to seamlessly integrate comprehensive well-being solutions into your workday, empowering you to achieve peak physical and mental performance without ever having to leave the building.</p>
+            <p>From state-of-the-art equipment and expert-led classes to personalized training and recovery services, every aspect of our program is designed with your success in mind. Experience the Fit2Go difference and unlock your full potential.</p>
+            <a href="#services" class="read-more"><span>Explore Our Services</span><i class="bi bi-arrow-right"></i></a>
+          </div>
+          <div class="col-xl-7">
+            <div class="row gy-4 icon-boxes">
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon-box">
+                  <i class="bi bi-buildings"></i>
+                  <h3>Exclusive Access</h3>
+                  <p>World-class facilities and programs available only to the tenants of 830 Brickell.</p>
+                </div>
+              </div>
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="icon-box">
+                  <i class="bi bi-clipboard-pulse"></i>
+                  <h3>Holistic Wellness</h3>
+                  <p>Comprehensive services addressing fitness, nutrition, recovery, and mindfulness.</p>
+                </div>
+              </div>
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="icon-box">
+                  <i class="bi bi-person-arms-up"></i>
+                  <h3>Expert Guidance</h3>
+                  <p>Certified trainers and wellness professionals dedicated to your personal goals.</p>
+                </div>
+              </div>
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+                <div class="icon-box">
+                  <i class="bi bi-calendar-check"></i>
+                  <h3>Seamless Integration</h3>
+                  <p>Conveniently located on-site, making wellness an effortless part of your day.</p>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-    </header>
-
-    <section id="about" class="about-partnership">
-        <div class="container">
-            <div style="text-align: center; margin-bottom: 50px;">
-                <h2>A Premier Partnership for Peak Professionals</h2>
+      </div>
+    </section><section id="services" class="services section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Your Exclusive Fitness & Wellness Services</h2>
+        <p>Discover a comprehensive suite of services designed to meet all your health and performance needs, right here at 830 Brickell.</p>
+      </div>
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6 service-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon flex-shrink-0"><i class="bi bi-person-bounding-box" style="color: #f57813;"></i></div>
+            <div>
+              <h4 class="title"><a href="#" class="stretched-link">Private Personal Training</a></h4>
+              <p class="description">Achieve your specific fitness goals with one-on-one sessions tailored to your needs, schedule, and abilities. Our expert trainers provide personalized workout plans, motivation, and guidance.</p>
             </div>
-            <div class="content-wrapper">
-                <div class="text-content">
-                    <h3>The Standard of Excellence, Extended to Your Wellness</h3>
-                    <p>830 Brickell represents the pinnacle of professional environments in Miami. In line with this standard, Fit2Go Personal Training has partnered with 830 Brickell to provide tenants with exclusive access to elite, professional fitness services—without ever having to leave the building.</p>
-                    <p>This is more than just access to a gym; it's an integrated wellness solution meticulously designed for high-achievers. Our world-class services are delivered on-site within 830 Brickell's state-of-the-art fitness center, offering unparalleled convenience, privacy, and tangible results.</p>
-                    <p><strong>Your health and performance are paramount. We're here to help you optimize both.</strong></p>
-                     <a href="#services" class="btn btn-secondary" style="margin-top: 20px;">Explore Our Services</a>
-                </div>
-                <div class="image-content">
-                    <img src="https://www.fit2gopt.com/wp-content/uploads/2025/05/media-entrance-1.jpg" alt="The modern entrance of the 830 Brickell tower">
-                </div>
+          </div>
+          <div class="col-lg-4 col-md-6 service-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon flex-shrink-0"><i class="bi bi-people" style="color: #15a04a;"></i></div>
+            <div>
+              <h4 class="title"><a href="#" class="stretched-link">Small Group Fitness Training</a></h4>
+              <p class="description">Experience the energy and camaraderie of small group training. These sessions offer a motivating environment to build strength, endurance, and functional fitness with personalized attention.</p>
             </div>
-        </div>
-    </section>
-
-    <section id="services" class="section-bg-light">
-        <div class="container">
-            <h2>Your Exclusive Fitness & Wellness Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Private Personal Training</h3>
-                    <p>Achieve your specific goals with dedicated one-on-one coaching, hyper-personalized to your body, lifestyle, and objectives.</p>
-                    <ul>
-                        <li>Detailed Fitness & Biometric Assessments</li>
-                        <li>Personalized Program Design & Progress Tracking</li>
-                        <li>Expert Nutrition & Sustainable Habit Coaching</li>
-                        <li>Specialization in Strength, Conditioning & Fat Loss</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <h3>Semi-Private Training</h3>
-                    <p>Experience the benefits of personal training in a motivating and collaborative small group setting (2-4 individuals).</p>
-                    <ul>
-                        <li>Personalized Attention with Shared Motivation</li>
-                        <li>Cost-Effective Access to Expert Guidance</li>
-                        <li>Dynamic Workouts Tailored to Group Goals</li>
-                        <li>Perfect for Colleagues or Friends</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <h3>Small Group Fitness Classes</h3>
-                    <p>Engage in dynamic and energetic classes like our popular "Power 45," designed to challenge, invigorate, and build community.</p>
-                    <ul>
-                        <li>Signature "Power 45" High-Intensity Workouts</li>
-                        <li>Full-Body Conditioning & Functional Fitness</li>
-                        <li>Build Camaraderie with Fellow Tenants</li>
-                        <li>Convenient and Efficient Class Schedules</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <h3>Mobility & Recovery Sessions</h3>
-                    <p>Enhance movement quality, reduce pain, and accelerate recovery with our Corrective Exercise Specialists.</p>
-                    <ul>
-                        <li>Targeted Stretching & Myofascial Release</li>
-                        <li>Postural Correction & Imbalance Rectification</li>
-                        <li>Injury Prevention & Rehabilitation Support</li>
-                        <li>Improve Flexibility, Stability & Joint Health</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <h3>Private Yoga Sessions</h3>
-                    <p>Cultivate mind-body balance, reduce stress, and improve flexibility with our experienced and certified yoga instructors.</p>
-                    <ul>
-                        <li>Customized Sessions for All Experience Levels</li>
-                        <li>Focus on Mindfulness, Breathwork & Stress Reduction</li>
-                        <li>Strength, Flexibility & Balance Enhancement</li>
-                        <li>A Serene Escape, Conveniently On-Site</li>
-                    </ul>
-                </div>
-                <div class="service-card" style="background-color: var(--fit2go-dark-green); color: var(--fit2go-white);">
-                    <h3 style="color: var(--fit2go-white);">Holistic Wellness Integration</h3>
-                    <p style="color: #e0e0e0;">Our philosophy extends beyond the workout. We provide comprehensive support to seamlessly integrate healthy, high-performance habits into your demanding lifestyle, ensuring sustainable results and peak function in all facets of your life.</p>
-                </div>
+          </div>
+          <div class="col-lg-4 col-md-6 service-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon flex-shrink-0"><i class="bi bi-universal-access" style="color: #d90769;"></i></div>
+            <div>
+              <h4 class="title"><a href="#" class="stretched-link">Group Fitness Classes</a></h4>
+              <p class="description">Choose from a diverse schedule of dynamic group classes, including HIIT, Strength & Conditioning, Core Fusion, and more. Designed to be challenging yet accessible for all fitness levels.</p>
             </div>
+          </div>
+          <div class="col-lg-4 col-md-6 service-item" data-aos="fade-up" data-aos-delay="400">
+            <div class="icon flex-shrink-0"><i class="bi bi-heart-pulse" style="color: #0d9991;"></i></div>
+            <div>
+              <h4 class="title"><a href="#" class="stretched-link">Mobility & Recovery</a></h4>
+              <p class="description">Enhance your flexibility, reduce muscle soreness, and prevent injuries with dedicated mobility workshops and assisted stretching services. Essential for recovery and long-term performance.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 service-item" data-aos="fade-up" data-aos-delay="500">
+            <div class="icon flex-shrink-0"><i class="bi bi-universal-access-circle" style="color: #f5cf13;"></i></div>
+            <div>
+              <h4 class="title"><a href="#" class="stretched-link">Mindful Yoga Sessions</a></h4>
+              <p class="description">Cultivate balance, reduce stress, and improve mental clarity with our range of yoga classes, from energizing Vinyasa flows to restorative Yin practices, suitable for all levels.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 service-item" data-aos="fade-up" data-aos-delay="600">
+            <div class="icon flex-shrink-0"><i class="bi bi-capsule" style="color: #0d6efd;"></i></div>
+            <div>
+              <h4 class="title"><a href="#" class="stretched-link">Wellness Workshops & Nutrition</a></h4>
+              <p class="description">Engage in informative workshops on topics like stress management, nutrition fundamentals, and ergonomic assessments to support your holistic well-being and healthy habits.</p>
+            </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </section><section id="portfolio" class="portfolio section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Experience the 830 Brickell Fitness Center</h2>
+        <p>A glimpse into your exclusive, state-of-the-art fitness and wellness sanctuary, designed for peak performance and rejuvenation.</p>
+      </div>
+      <div class="container">
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-facility">Facility</li>
+            <li data-filter=".filter-classes">Classes</li>
+            <li data-filter=".filter-equipment">Equipment</li>
+          </ul>
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-facility">
+              <img src="assets/img/masonry-portfolio/masonry-portfolio-1.jpg" class="img-fluid" alt="Modern gym facility overview">
+              <div class="portfolio-info">
+                <h4>Facility Overview</h4>
+                <p>Spacious and well-lit training areas.</p>
+                <a href="assets/img/masonry-portfolio/masonry-portfolio-1.jpg" title="Facility Overview" data-gallery="portfolio-gallery-facility" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="#" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-equipment">
+              <img src="assets/img/masonry-portfolio/masonry-portfolio-2.jpg" class="img-fluid" alt="Cardio equipment zone">
+              <div class="portfolio-info">
+                <h4>Cardio Zone</h4>
+                <p>Latest generation treadmills and ellipticals.</p>
+                <a href="assets/img/masonry-portfolio/masonry-portfolio-2.jpg" title="Cardio Zone" data-gallery="portfolio-gallery-equipment" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="#" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-classes">
+              <img src="assets/img/masonry-portfolio/masonry-portfolio-3.jpg" class="img-fluid" alt="Group fitness class in session">
+              <div class="portfolio-info">
+                <h4>Group Class Energy</h4>
+                <p>Dynamic and engaging group workouts.</p>
+                <a href="assets/img/masonry-portfolio/masonry-portfolio-3.jpg" title="Group Class Energy" data-gallery="portfolio-gallery-classes" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="#" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-facility">
+              <img src="assets/img/masonry-portfolio/masonry-portfolio-4.jpg" class="img-fluid" alt="Strength training area">
+              <div class="portfolio-info">
+                <h4>Strength Area</h4>
+                <p>Comprehensive free weights and machines.</p>
+                <a href="assets/img/masonry-portfolio/masonry-portfolio-4.jpg" title="Strength Area" data-gallery="portfolio-gallery-facility" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="#" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-equipment">
+              <img src="assets/img/masonry-portfolio/masonry-portfolio-5.jpg" class="img-fluid" alt="Functional training equipment">
+              <div class="portfolio-info">
+                <h4>Functional Rig</h4>
+                <p>Versatile equipment for functional training.</p>
+                <a href="assets/img/masonry-portfolio/masonry-portfolio-5.jpg" title="Functional Rig" data-gallery="portfolio-gallery-equipment" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="#" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-classes">
+              <img src="assets/img/masonry-portfolio/masonry-portfolio-6.jpg" class="img-fluid" alt="Yoga and mind-body studio">
+              <div class="portfolio-info">
+                <h4>Yoga Studio</h4>
+                <p>Serene space for yoga and meditation.</p>
+                <a href="assets/img/masonry-portfolio/masonry-portfolio-6.jpg" title="Yoga Studio" data-gallery="portfolio-gallery-classes" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="#" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div></div>
+      </div>
+    </section><section id="leadership" class="leadership-section section"> 
+      <div class="container" data-aos="fade-up">
 
-    <section id="team">
-        <div class="container">
-            <h2>Meet Your Dedicated Fitness Leadership</h2>
-            <div class="team-grid">
-                <div class="team-member-card">
-                    <img src="https://www.fit2gopt.com/wp-content/uploads/2025/05/michela_830brickell_masterfinal_approved-1.jpg" alt="Michela Macke, M.S. - Director of Fitness Operations at Fit2Go for 830 Brickell">
-                    <h3>Michela Macke, M.S.</h3>
-                    <p class="title">Director of Fitness Operations, 830 Brickell</p>
-                    <p>With a Master of Science in Exercise Science and a wealth of experience in corporate wellness program management and elite personal training, Michela spearheads all Fit2Go operations at 830 Brickell. She is passionately committed to delivering a premium, results-driven, and client-centric fitness experience for every tenant.</p>
+        <div class="section-title">
+          <h2>Meet Your Dedicated Fitness Leadership</h2>
+          <p>Our expert leaders are committed to elevating your fitness experience at 830 Brickell.</p>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-9 col-md-10" data-aos="fade-up" data-aos-delay="100">
+            <div class="director-profile text-center">
+              <img src="assets/img/trainers/trainer-1.jpeg" alt="Michela Weber, M.S., Director of Operations" class="img-fluid rounded-circle mb-4">
+              <h3>Michela Weber, M.S.</h3>
+              <h4>Director of Operations, 830 Brickell Partnership</h4>
+              <p class="lead px-lg-5">Michela expertly oversees all fitness and wellness operations at our 830 Brickell location. With a keen eye for detail and a passion for excellence, she ensures every tenant experiences a premier, seamlessly managed fitness journey.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row justify-content-center mt-5 pt-lg-4">
+          <div class="col-lg-11 col-md-12" data-aos="fade-up" data-aos-delay="200">
+            <div class="instructor-feature">
+              <div class="row align-items-stretch g-0"> 
+                <div class="col-lg-5 order-lg-0"> 
+                  <div class="instructor-content p-4 p-lg-5">
+                    <h3>Jorge S. & The Power 45 Experience</h3>
+                    <p>Experience the energy of Power 45! Jorge's popular class, held right in the 830 Brickell fitness center, is a dynamic 45-minute session designed to build strength and boost endurance. This image captures the vibrant atmosphere of tenants engaging in this transformative workout.</p>
+                    <a href="#contact" class="btn btn-outline-primary mt-3">Learn More About Classes</a>
+                  </div>
                 </div>
-                <div class="team-member-card">
-                    <img src="https://www.fit2gopt.com/wp-content/uploads/2025/05/jorge-830-class-wide.jpg" alt="Jorge Roman, Fit2Go Lead Trainer, in the 830 Brickell fitness center">
-                    <h3>Jorge Roman</h3>
-                    <p class="title">Lead Trainer & Group Fitness Coach</p>
-                    <p>Jorge is a dynamic and highly sought-after CES certified trainer, celebrated for his energetic "Power 45" workouts and his exceptional ability to motivate clients to surpass their limits. He brings unparalleled passion, expertise, and a focus on functional strength to every session, helping tenants build robust health and endurance.</p>
+                <div class="col-lg-7 order-lg-1 instructor-image-wrapper image-on-right"> 
+                  <img src="assets/img/jorge-power45-class-wide.jpg" alt="Jorge S. leading the Power 45 class at 830 Brickell fitness center" class="img-fluid">
                 </div>
+              </div>
             </div>
+          </div>
         </div>
-    </section>
-
-    <section id="featured" class="section-bg-light">
-        <div class="container">
-            <h2>Fit2Go: Trusted By Leading Publications</h2>
-            <div class="featured-logos-container">
-                <img src="https://www.fit2gopt.com/wp-content/uploads/2025/05/shape-magazine-logo-fit2go-personal-training-press-feature.webp" alt="Shape Magazine Logo">
-                <img src="https://www.fit2gopt.com/wp-content/uploads/2025/05/self-magazine-logo-fit2go-fitness-media-feature.png" alt="Self Magazine Logo">
-                <img src="https://www.fit2gopt.com/wp-content/uploads/2025/05/readers-digest-logo-fit2go-trusted-publication-feature.png" alt="Reader's Digest Logo">
-                <img src="https://www.fit2gopt.com/wp-content/uploads/2025/05/muscle-and-fitness-logo-fit2go-media-feature.png" alt="Muscle & Fitness Logo">
-                <img src="https://www.fit2gopt.com/wp-content/uploads/2025/05/glamour-magazine-logo-fit2go-press-feature.png" alt="Glamour Magazine Logo">
+      </div>
+    </section><section id="call-to-action" class="call-to-action section">
+      <img src="assets/img/cta-bg.jpg" alt="Fitness class background">
+      <div class="container">
+        <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-xl-10">
+            <div class="text-center">
+              <h3>Ready to Transform Your Health & Performance?</h3>
+              <p>Join the exclusive Fit2Go program at 830 Brickell and unlock your potential. Get started today by exploring our services or contacting our team for a personal consultation.</p>
+              <a class="cta-btn" href="#contact">Get Started Today</a>
             </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </section><section id="contact" class="contact section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Connect With Us</h2>
+        <p>Have questions or ready to begin your fitness journey at 830 Brickell? Reach out to the Fit2Go team.</p>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+          <div class="col-lg-5">
+            <div class="info-wrap">
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                <div>
+                  <h3>Location</h3>
+                  <p>830 Brickell Plaza, Miami, FL 33131 (Exclusively for Tenants)</p>
+                </div>
+              </div>
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+                <i class="bi bi-telephone flex-shrink-0"></i>
+                <div>
+                  <h3>Call Us</h3>
+                  <p>(305) 555-0183 (Fit2Go @ 830 Brickell)</p>
+                </div>
+              </div>
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+                <i class="bi bi-envelope flex-shrink-0"></i>
+                <div>
+                  <h3>Email Us</h3>
+                  <p>830brickell@fit2gocorp.com</p>
+                </div>
+              </div>
+              </div>
+          </div>
+          <div class="col-lg-7">
+            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+              <div class="row gy-4">
+                <div class="col-md-6">
+                  <label for="name-field" class="pb-2">Your Name</label>
+                  <input type="text" name="name" id="name-field" class="form-control" required="">
+                </div>
+                <div class="col-md-6">
+                  <label for="email-field" class="pb-2">Your Email</label>
+                  <input type="email" class="form-control" name="email" id="email-field" required="">
+                </div>
+                <div class="col-md-12">
+                  <label for="subject-field" class="pb-2">Subject</label>
+                  <input type="text" class="form-control" name="subject" id="subject-field" required="">
+                </div>
+                <div class="col-md-12">
+                  <label for="message-field" class="pb-2">Message</label>
+                  <textarea class="form-control" name="message" id="message-field" rows="10" required=""></textarea>
+                </div>
+                <div class="col-md-12 text-center">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+                  <button type="submit">Send Message</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section></main>
 
-    <section class="final-cta-section container">
-        <div>
-            <h2>Ready to Transform Your Health & Performance?</h2>
-            <p>
-                Take the first step towards a stronger, healthier, and more productive you.
-                Your exclusive, complimentary fitness consultation at 830 Brickell is waiting.
-            </p>
-            <a href="https://fit2go-brickell.youcanbook.me" target="_blank" class="btn btn-primary">
-                Book Your Consultation Now
-            </a>
-            <p class="cta-subtext">This premium service is exclusively for tenants of 830 Brickell.</p>
+  <footer id="footer" class="footer">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <img src="assets/img/logo-fit2go-footer.png" alt="Fit2Go">
+          </a>
+          <p>Elevating tenant wellness at 830 Brickell through premier fitness services, expert guidance, and state-of-the-art facilities. Your peak performance starts here.</p>
+          <div class="social-links d-flex mt-4">
+            <a href="#"><i class="bi bi-twitter-x"></i></a>
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+          </div>
         </div>
-    </section>
 
-    <footer class="footer">
-        <div class="container">
-            <img src="https://www.fit2gopt.com/wp-content/uploads/2019/05/Contrast-logo.png" alt="Fit2Go Personal Training Logo - White Version" class="footer-logo">
-            <p><strong>Fit2Go Personal Training at 830 Brickell</strong></p>
-            <p>Delivering elite fitness solutions for a high-performance lifestyle.</p>
-            <div class="footer-links">
-                <a href="https://www.fit2gopt.com/" target="_blank">Fit2Go Main Website</a> |
-                <a href="#">Privacy Policy</a> |
-                <a href="#">Terms of Service</a>
-            </div>
-            <p>© 2024 Fit2Go Personal Training. All Rights Reserved.</p>
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Gallery</a></li>
+            <li><a href="#leadership">Leadership</a></li>
+          </ul>
         </div>
-    </footer>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="#services">Personal Training</a></li>
+            <li><a href="#services">Group Fitness</a></li>
+            <li><a href="#services">Yoga & Mindfullness</a></li> <li><a href="#services">Mobility & Recovery</a></li>
+            <li><a href="#services">Wellness Workshops</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contact Us</h4>
+          <p>830 Brickell Plaza</p>
+          <p>Miami, FL 33131</p>
+          <p>United States</p>
+          <p class="mt-4"><strong>Phone:</strong> <span>(305) 555-0183</span></p>
+          <p><strong>Email:</strong> <span>830brickell@fit2gocorp.com</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Fit2Go Corporate Wellness</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        Designed by <a href="https://fit2gocorp.com/">Fit2Go</a>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <script src="assets/js/main.js"></script>
 
 </body>
 </html>
