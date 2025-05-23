@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Exclusive personal training and wellness services for tenants of 830 Brickell, offered by Fit2Go. Schedule your complimentary fitness consultation today.">
     <title>Exclusive Fitness for 830 Brickell Tenants | Fit2Go Personal Training</title>
-    <!-- <link rel="icon" href="path/to/your/favicon.ico"> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -275,53 +274,138 @@
             font-size: 0.9rem;
             margin-bottom: 10px;
             padding-left: 28px; 
-            position: relative; /* Crucial for ::before positioning */
+            position: relative; 
             color: var(--text-secondary);
             line-height: 1.5;
         }
         .service-card ul li::before {
-            content: '✔'; /* Direct UTF-8 Heavy Checkmark */
+            content: '✔'; 
             color: var(--fit2go-light-green);
-            font-weight: bold; /* Optional: makes it bolder if font supports */
+            font-weight: bold; 
             position: absolute;
             left: 0;
-            font-size: 1.1em; /* Adjust size as needed */
-            top: 1px; /* Adjust vertical alignment */
+            font-size: 1.1em; 
+            top: 1px; 
         }
 
-        /* --- Team Section --- */
-        .team-grid {
+        /* --- Leadership Section (formerly Team Section) --- */
+        /* Director Feature Card (Michela) */
+        .director-feature-card {
+            background-color: var(--fit2go-white);
+            border-radius: 12px;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.1);
+            margin: 0 auto 50px auto; 
+            max-width: 800px; 
+            display: flex;
+            flex-direction: column; 
+            align-items: center;
+            text-align: center;
+            padding: 30px; 
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .director-feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 45px rgba(0,0,0,0.15);
+        }
+        .director-image-container { 
+            width: 200px; 
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden; 
+            margin-bottom: 25px;
+            border: 6px solid var(--fit2go-white);
+            box-shadow: 0 0 0 5px var(--fit2go-light-green);
+            flex-shrink: 0;
+        }
+        .director-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 5%; /* Adjusted to shift image down slightly from top */
+        }
+        .director-content {
+            flex-grow: 1;
+        }
+        .director-content h3 {
+            font-size: 1.75rem; 
+            margin-bottom: 8px;
+        }
+        .director-content .title {
+            font-family: var(--font-primary);
+            font-size: 1rem;
+            color: var(--fit2go-light-green);
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.75px;
+        }
+        .director-content p { 
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1rem; 
+        }
+        .director-content p:last-child {
+            margin-bottom: 0; 
+        }
+
+        /* Responsive for Director Card - side-by-side on larger screens */
+        @media (min-width: 768px) {
+            .director-feature-card {
+                flex-direction: row; 
+                text-align: left;
+                padding: 40px; 
+            }
+            .director-image-container {
+                margin-right: 30px;
+                margin-bottom: 0; 
+            }
+        }
+        
+        /* Jorge's Profile Card */
+        .team-grid { 
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
+            margin-top: 40px; 
         }
-        .team-member-card {
+        .team-member-jorge { 
             background-color: var(--fit2go-white);
-            padding: 35px 30px;
             border-radius: 12px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-            text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden; 
+            display: flex;
+            flex-direction: column;
         }
-        .team-member-card:hover {
+        .team-member-jorge:hover {
             transform: translateY(-8px);
             box-shadow: 0 15px 35px rgba(0,0,0,0.12);
         }
-        .team-member-card img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            object-fit: cover;
-            object-position: center;
-            margin-bottom: 25px;
-            border: 6px solid var(--fit2go-white);
-            box-shadow: 0 0 0 4px var(--fit2go-light-green);
+        .team-member-jorge .jorge-image-container {
+            width: 100%;
+            height: auto; 
+            max-height: 320px; 
+            overflow: hidden; 
         }
-        .team-member-card h3 {
+        .team-member-jorge .jorge-image-container img {
+            width: 100%;
+            height: 100%; 
+            object-fit: cover; 
+            object-position: center; 
+            display: block; 
+        }
+        .team-member-jorge .jorge-content {
+            padding: 25px 30px;
+            text-align: left;
+            flex-grow: 1; 
+        }
+        .team-member-jorge .jorge-content h3 {
             font-size: 1.4rem;
             margin-bottom: 8px;
+            text-align: left;
         }
-        .team-member-card .title {
+        .team-member-jorge .jorge-content .title {
             font-family: var(--font-primary);
             font-size: 0.95rem;
             color: var(--fit2go-light-green);
@@ -329,13 +413,15 @@
             margin-bottom: 15px;
             text-transform: uppercase;
             letter-spacing: 0.75px;
+            text-align: left;
         }
-        .team-member-card p {
+        .team-member-jorge .jorge-content p {
             font-size: 0.9rem;
             color: var(--text-secondary);
             line-height: 1.6;
+            text-align: left;
         }
-
+      
         /* --- As Featured In Section --- */
         #featured h2 {
             font-size: 1.6rem; 
@@ -438,6 +524,25 @@
             margin: 0 12px;
         }
 
+        /* --- Mobile Navigation Hamburger --- */
+        .nav-toggle {
+            display: none; 
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            margin-left: auto; 
+            z-index: 1001; 
+        }
+        .nav-toggle .hamburger-line {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: var(--fit2go-black);
+            margin: 5px 0;
+            transition: all 0.3s ease-in-out;
+        }
+
         /* --- Responsive Adjustments --- */
         @media (max-width: 992px) {
             h1 { font-size: 2.75rem; }
@@ -447,11 +552,72 @@
                 flex-basis: 100%;
             }
             .about-partnership .image-content img { margin-top: 30px; }
-            .navbar-container { flex-direction: column; align-items: center; }
-            .nav-menu { margin-top: 20px; flex-direction: column; align-items: center; width: 100%;}
-            .nav-item { margin-left: 0; margin-bottom: 12px; width: auto; } 
-            .nav-link { display: block; padding: 8px 10px; text-align: center; } 
-            .nav-cta { margin-left: 0; margin-top:15px; display:block; text-align:center;}
+
+            .navbar-container {
+                flex-direction: row; 
+                position: relative; 
+            }
+            .nav-toggle {
+                display: block; 
+            }
+            .nav-menu {
+                display: none; 
+                flex-direction: column;
+                width: 100%;
+                background-color: var(--fit2go-white);
+                position: absolute;
+                top: calc(100% + 5px); 
+                left: 0;
+                right: 0;
+                box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+                padding: 0; 
+                margin-top: 0; 
+                align-items: stretch; 
+                border-top: 1px solid var(--border-color);
+            }
+            .nav-menu.nav-menu-mobile-open {
+                display: flex; 
+            }
+            .nav-item {
+                margin-left: 0;
+                margin-bottom: 0; 
+                width: 100%; 
+                text-align: center;
+                border-bottom: 1px solid var(--border-color);
+            }
+             .nav-item:last-child {
+                border-bottom: none;
+            }
+            .nav-link {
+                display: block; 
+                padding: 15px; 
+                width: 100%;
+            }
+            .nav-link::after { 
+                display: none;
+            }
+            .nav-cta {
+                margin-left: 0;
+                margin-top: 0;
+                padding: 15px; 
+                border-top: 1px solid var(--border-color); 
+            }
+            .nav-cta .btn { 
+                display: block;
+                width: auto; 
+                margin: 0 auto;
+                max-width: 280px;
+            }
+
+            .nav-toggle[aria-expanded="true"] .hamburger-line:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            .nav-toggle[aria-expanded="true"] .hamburger-line:nth-child(2) {
+                opacity: 0;
+            }
+            .nav-toggle[aria-expanded="true"] .hamburger-line:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
         }
 
         @media (max-width: 768px) {
@@ -461,10 +627,12 @@
             .hero-content h1 { font-size: 2.4rem; }
             .hero { min-height: auto; padding: 80px 0 60px; }
             .services-grid { grid-template-columns: 1fr; }
-            .team-grid { grid-template-columns: 1fr; }
+            .team-grid { grid-template-columns: 1fr; } 
             .final-cta-section h2 { font-size: 2.1rem; }
             .final-cta-section { margin-left: 15px; margin-right: 15px; padding: 50px 20px; }
             .featured-logos-container img { max-height: 40px; }
+            .director-feature-card { flex-direction: column; text-align: center; padding: 30px; } 
+            .director-image-container { margin-right: 0; margin-bottom: 25px; }
         }
 
         @media (max-width: 576px) {
@@ -476,7 +644,9 @@
             .hero .btn-primary { padding: 0.85rem 2rem; font-size: 1rem; }
             .final-cta-section .btn-primary { padding: 0.9rem 1.75rem; font-size: 1rem;}
             .footer { padding: 40px 0 30px; }
-            .team-member-card img { width: 150px; height: 150px; }
+            .director-image-container { width: 160px; height: 160px; } 
+            .director-content h3 { font-size: 1.5rem; }
+            .team-member-jorge .jorge-image-container { max-height: 220px; }
         }
     </style>
 </head>
@@ -487,10 +657,15 @@
             <a href="#"> 
                 <img src="https://www.fit2gopt.com/wp-content/uploads/2019/05/Contrast-logo.png" alt="Fit2Go Personal Training Logo" class="navbar-logo">
             </a>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
             <ul class="nav-menu">
                 <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
-                <li class="nav-item"><a href="#team" class="nav-link">Your Team</a></li>
+                <li class="nav-item"><a href="#team" class="nav-link">Leadership</a></li>
                 <li class="nav-item nav-cta">
                     <a href="https://fit2go-brickell.youcanbook.me" target="_blank" class="btn btn-primary">Book Consultation</a>
                 </li>
@@ -595,18 +770,30 @@
     <section id="team">
         <div class="container">
             <h2>Meet Your Dedicated Fitness Leadership</h2>
-            <div class="team-grid">
-                <div class="team-member-card">
-                    <img src="https://www.fit2gopt.com/wp-content/uploads/2025/05/michela_830brickell_masterfinal_approved-1.jpg" alt="Michela Macke, M.S. - Director of Fitness Operations at Fit2Go for 830 Brickell">
+
+            <div class="director-feature-card">
+                <div class="director-image-container">
+                    <img src="https://www.fit2gopt.com/wp-content/uploads/2025/05/michela_830brickell_masterfinal_approved-1.jpg" alt="Michela Macke, M.S. - Director of Fitness Operations">
+                </div>
+                <div class="director-content">
                     <h3>Michela Macke, M.S.</h3>
                     <p class="title">Director of Fitness Operations, 830 Brickell</p>
-                    <p>With a Master of Science in Exercise Science and a wealth of experience in corporate wellness program management and elite personal training, Michela spearheads all Fit2Go operations at 830 Brickell. She is passionately committed to delivering a premium, results-driven, and client-centric fitness experience for every tenant.</p>
+                    <p>Michela holds a Master of Science in Applied Physiology from the University of Miami, with dual concentrations in Sports Psychology and Strength & Conditioning. As an ACE Certified Personal Trainer and 200+ hour Yoga Instructor, she blends cutting-edge training methods with holistic wellness principles to help high performers thrive.</p>
+                    <p>Her hands-on experience spans general fitness clients to professional athletes, with a background that includes Division 1 Strength & Conditioning, yoga for college and pro athletes, and mental performance consulting. Michela’s approach integrates strength, mobility, and mindset — empowering clients to reach their peak through personalized, science-backed programs.</p>
+                    <p>As the Director of Fit2Go at 830 Brickell, Michela leads with passion, precision, and a deep commitment to mental and physical transformation.</p>
                 </div>
-                <div class="team-member-card">
-                    <img src="https://www.fit2gopt.com/wp-content/uploads/2025/05/jorge-830-class-wide.jpg" alt="Jorge Roman, Fit2Go Lead Trainer, in the 830 Brickell fitness center">
-                    <h3>Jorge Roman</h3>
-                    <p class="title">Lead Trainer & Group Fitness Coach</p>
-                    <p>Jorge is a dynamic and highly sought-after CES certified trainer, celebrated for his energetic "Power 45" workouts and his exceptional ability to motivate clients to surpass their limits. He brings unparalleled passion, expertise, and a focus on functional strength to every session, helping tenants build robust health and endurance.</p>
+            </div>
+
+            <div class="team-grid"> 
+                <div class="team-member-jorge">
+                    <div class="jorge-image-container">
+                        <img src="https://www.fit2gopt.com/wp-content/uploads/2025/05/jorge-830-class-wide.jpg" alt="Jorge Roman leading his Power 45 class in the 830 Brickell fitness center">
+                    </div>
+                    <div class="jorge-content">
+                        <h3>Jorge Roman</h3>
+                        <p class="title">Lead Trainer & Power 45 Coach</p>
+                        <p>Jorge is a bilingual (Spanish-English) Certified Personal Trainer (ISSA) and an NBHWC-accredited Health & Nutrition Coach with over three years of experience. Holding a B.A. in Neuroscience from Kenyon College, he leverages empathetic listening and motivational interviewing to empower clients. Jorge specializes in sustainable weight loss, healthy stress-management, sleep optimization, and guiding positive behavioral changes. He has a proven track record of helping clients improve metabolic health markers and created the successful Burnout Recovery and Sustainable Weight Loss programs at Hacienda Del Sol Wellness Center. His energetic "Power 45" classes are a testament to his passion for functional strength and client motivation.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -652,6 +839,31 @@
             <p>© 2024 Fit2Go Personal Training. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.querySelector('.nav-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', function() {
+                    const isExpanded = navToggle.getAttribute('aria-expanded') === 'true' || false;
+                    navToggle.setAttribute('aria-expanded', !isExpanded);
+                    navMenu.classList.toggle('nav-menu-mobile-open');
+                });
+
+                const navLinks = navMenu.querySelectorAll('.nav-menu .nav-link');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (navMenu.classList.contains('nav-menu-mobile-open')) {
+                            navToggle.setAttribute('aria-expanded', 'false');
+                            navMenu.classList.remove('nav-menu-mobile-open');
+                        }
+                    });
+                });
+            }
+        });
+    </script>
 
 </body>
 </html>
