@@ -1,3 +1,37 @@
+Yes, I see that Jorge's picture in the "Meet Your Dedicated Fitness Leadership" section is indeed cropped, cutting off part of him. This happens because the image (jorge-830-class-wide.jpg) is wider than it is tall, and the CSS for the team member images is set to make them circular (border-radius: 50%) and cover the area (object-fit: cover;). object-fit: cover; will fill the circular shape while maintaining the image's aspect ratio, which often leads to cropping on non-square images.
+
+How to Fix Jorge's Cropped Picture:
+
+The object-position CSS property allows us to control how the image is positioned within its frame when object-fit: cover; is used. We can adjust this to better center Jorge in the visible circular area.
+
+Since he's likely more towards the center or slightly to one side in the wide image, we'll try to adjust the horizontal positioning.
+
+CSS Change:
+
+We'll add a specific class or an ID to Jorge's image or his card if we want to target only his image for different positioning. However, for a quick fix, or if a general adjustment might work for other similar non-square images, we can try a more central object-position. Often, center center is the default, but explicitly setting it or trying percentages can help.
+
+Let's try to ensure it's centered. If Jorge is significantly off-center in the original wide photo, this might still result in some cropping, but it should be better than the default.
+
+No major code changes are needed if the current object-position: center; (which is often the default if not specified) is already trying its best.
+
+The issue might be that the most interesting part of Jorge in that wide photo isn't in the dead center that object-fit: cover and object-position: center would naturally select for a circle.
+
+Alternative Solutions (If simple centering doesn't fully resolve it):
+
+Provide a Pre-Cropped Square Image: The most reliable way to ensure a perfect circular headshot is to start with a square image where the subject is already centered. If you can crop the jorge-830-class-wide.jpg image into a square, focusing on Jorge, that would be ideal.
+
+Fine-tune object-position with Percentages: If you can't provide a square image, you can try to "nudge" the image within the circle using percentages for object-position. For example, object-position: 30% center; would shift the image so that the point 30% from the left edge of the image is centered horizontally within the circle. This requires some trial and error.
+
+Let's assume for now that the existing object-position: center; in the CSS is what we have and try to improve the descriptive text and overall polish based on the provided screenshots, keeping in mind this cropping issue.
+
+Since the current code already has object-fit: cover; and object-position: center; for .team-member-card img, a CSS-only fix without changing the image itself is limited if the subject isn't well-centered in the original wide photo for a circular crop.
+
+Given the current code and the image, the best immediate action without image editing is to ensure object-position: center; is explicitly there, but the visual outcome will heavily depend on the original image's composition.
+
+I will proceed with the general polish and mobile menu as requested in the previous prompt, and ensure the object-position is explicitly set to center for the team images, which is the best default for object-fit: cover in a circle.
+
+Let's use the last fully correct code (where checkmarks and header were good) and re-apply the mobile menu and other polishes.
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +39,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Exclusive personal training and wellness services for tenants of 830 Brickell, offered by Fit2Go. Schedule your complimentary fitness consultation today.">
     <title>Exclusive Fitness for 830 Brickell Tenants | Fit2Go Personal Training</title>
-    <link rel="icon" href="https://www.fit2gopt.com/wp-content/uploads/2019/05/cropped-Untitled-design-2-32x32.png"> <!-- Example Favicon -->
+    <link rel="icon" href="https://www.fit2gopt.com/wp-content/uploads/2019/05/cropped-Untitled-design-2-32x32.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -40,7 +74,7 @@
             background-color: var(--fit2go-white);
             line-height: 1.7;
             font-size: 16px;
-            overflow-x: hidden; /* Prevent horizontal scroll if mobile menu is wide */
+            overflow-x: hidden; 
         }
 
         /* --- Typography --- */
@@ -104,9 +138,8 @@
             vertical-align: middle;
         }
         
-        /* Hamburger Menu Icon */
         .menu-toggle {
-            display: none; /* Hidden on desktop */
+            display: none; 
             flex-direction: column;
             justify-content: space-around;
             width: 30px;
@@ -124,7 +157,6 @@
             border-radius: 10px;
             transition: all 0.3s ease-in-out;
         }
-         /* Hamburger animation for 'X' */
         .menu-toggle.is-active .bar:nth-child(1) {
             transform: translateY(9px) rotate(45deg);
         }
@@ -345,7 +377,7 @@
             height: 180px;
             border-radius: 50%;
             object-fit: cover;
-            object-position: center;
+            object-position: center center; /* Explicitly center the image */
             margin-bottom: 25px;
             border: 6px solid var(--fit2go-white);
             box-shadow: 0 0 0 4px var(--fit2go-light-green);
@@ -481,21 +513,21 @@
         /* --- Responsive Adjustments (Mobile Menu) --- */
         @media (max-width: 992px) {
             .menu-toggle {
-                display: flex; /* Show hamburger */
+                display: flex; 
             }
             .nav-menu {
-                display: none; /* Hide nav menu by default on mobile */
+                display: none; 
                 flex-direction: column;
                 width: 100%;
                 position: absolute;
-                top: 70px; /* Adjust based on navbar height */
+                top: 70px; 
                 left: 0;
                 background-color: var(--fit2go-white);
                 box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-                padding-bottom: 1rem; /* Spacing at bottom of open menu */
+                padding-bottom: 1rem; 
             }
             .nav-menu.is-active {
-                display: flex; /* Show when active */
+                display: flex; 
             }
             .nav-item {
                 margin-left: 0;
@@ -504,11 +536,11 @@
             }
             .nav-link {
                 display: block;
-                padding: 1rem 0; /* Larger touch targets */
-                border-bottom: 1px solid var(--bg-light-gray); /* Separators */
+                padding: 1rem 0; 
+                border-bottom: 1px solid var(--bg-light-gray); 
             }
             .nav-link::after {
-                display: none; /* Remove underline hover effect for mobile list */
+                display: none; 
             }
             .nav-item:last-child .nav-link {
                 border-bottom: none;
@@ -517,14 +549,13 @@
                 margin-left: 0;
                 margin-top: 1rem;
                 width: 100%;
-                padding: 0 15px; /* Add padding for button within mobile menu */
+                padding: 0 15px; 
             }
              .nav-cta .btn {
                 width: 100%; 
-                padding: 1rem; /* Make mobile CTA button larger */
+                padding: 1rem; 
             }
 
-            /* General responsive styles */
             h1 { font-size: 2.75rem; }
             .hero-content h1 { font-size: 2.8rem; }
             .hero-content .subtitle { font-size: 1.2rem; }
@@ -688,7 +719,7 @@
                     <p>With a Master of Science in Exercise Science and a wealth of experience in corporate wellness program management and elite personal training, Michela spearheads all Fit2Go operations at 830 Brickell. She is passionately committed to delivering a premium, results-driven, and client-centric fitness experience for every tenant.</p>
                 </div>
                 <div class="team-member-card">
-                    <img src="https://www.fit2gopt.com/wp-content/uploads/2025/05/jorge-830-class-wide.jpg" alt="Jorge Roman, Fit2Go Lead Trainer, leading a class in the 830 Brickell fitness center">
+                    <img src="https://www.fit2gopt.com/wp-content/uploads/2025/05/jorge-830-class-wide.jpg" alt="Jorge Roman, Fit2Go Lead Trainer, in the 830 Brickell fitness center">
                     <h3>Jorge Roman</h3>
                     <p class="title">Lead Trainer & Group Fitness Coach</p>
                     <p>Jorge is a dynamic and highly sought-after CES certified trainer, celebrated for his energetic "Power 45" workouts and his exceptional ability to motivate clients to surpass their limits. He brings unparalleled passion, expertise, and a focus on functional strength to every session, helping tenants build robust health and endurance.</p>
