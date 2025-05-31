@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Exclusive personal training and wellness services for tenants of 830 Brickell, offered by Fit2Go. Schedule your complimentary fitness consultation today.">
+    <title>Exclusive Fitness for 830 Brickell Tenants | Fit2Go Personal Training</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* --- Global Reset & Variables --- */
+        :root {
+            --fit2go-dark-green: #14880C;
+            --fit2go-light-green: #09D200;
+            --fit2go-white: #FFFFFF;
+            --fit2go-black: #000000;
+            --text-primary: #212529; 
+            --text-secondary: #495057; 
+            --bg-light-gray: #f8f9fa;
+            --border-color: #dee2e6; 
+            --subtle-border-color: #e9ecef; 
+            --font-primary: 'Roboto', sans-serif;
+            --font-headings: 'Montserrat', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            color: var(--text-primary);
+            background-color: var(--fit2go-white);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        /* --- Typography --- */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-headings);
+            color: var(--fit2go-dark-green);
+            font-weight: 700;
+            line-height: 1.3; 
+            margin-bottom: 0.75em;
+        }
+        h1 { font-size: 3rem; letter-spacing: -0.5px; }
+        h2 { font-size: 2.25rem; text-align: center; margin-bottom: 1.75em; letter-spacing: -0.25px;}
+        h3 { font-size: 1.5rem; color: var(--fit2go-dark-green); }
+        p {
+            margin-bottom: 1.1rem;
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+        a {
+            color: var(--fit2go-dark-green);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: var(--fit2go-light-green);
+        }
+
+        /* --- Layout & Container --- */
+        .container {
+            width: 90%;
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-bg-light {
+            background-color: var(--bg-light-gray);
+        }
+
+        /* --- Navigation Bar --- */
+        .navbar {
+            background-color: var(--fit2go-white);
+            padding: 1rem 0;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar-logo {
+            max-height: 45px;
+            vertical-align: middle;
+        }
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+        .nav-item {
+            margin-left: 28px;
+        }
+        .nav-link {
+            font-family: var(--font-headings);
+            font-weight: 600;
+            color: var(--fit2go-black);
+            font-size: 0.9rem;
+            padding: 5px 0;
+            position: relative;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--fit2go-light-green);
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--fit2go-light-green);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+        .nav-cta {
+            margin-left: 28px;
+        }
+
+        /* Hamburger Menu Button */
+        .navbar-toggler {
+            display: none; 
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--fit2go-black);
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        .navbar-toggler-icon { 
+            display: block;
+            width: 22px;
+            height: 2px;
+            background-color: var(--fit2go-black);
+            position: relative;
+            transition: background-color 0.3s ease;
+        }
+        .navbar-toggler-icon::before,
+        .navbar-toggler-icon::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--fit2go-black);
+            transition: transform 0.3s ease;
+        }
+        .navbar-toggler-icon::before {
+            top: -7px;
+        }
+        .navbar-toggler-icon::after {
+            bottom: -7px;
+        }
+        .navbar-toggler.active .navbar-toggler-icon {
+            background-color: transparent; 
+        }
+        .navbar-toggler.active .navbar-toggler-icon::before {
+            transform: translateY(7px) rotate(45deg);
+        }
+        .navbar-toggler.active .navbar-toggler-icon::after {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+
+        /* --- Buttons --- */
+        .btn {
+            display: inline-block;
+            font-family: var(--font-headings);
+            font-weight: 600;
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+            border: 2px solid transparent;
+            padding: 0.85rem 1.85rem;
+            font-size: 0.95rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.75px;
+        }
+        .btn-primary {
+            background-color: var(--fit2go-dark-green);
+            color: var(--fit2go-white);
+            border-color: var(--fit2go-dark-green);
+        }
+        .btn-primary:hover {
+            background-color: var(--fit2go-light-green);
+            border-color: var(--fit2go-light-green);
+            color: var(--fit2go-black);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--fit2go-dark-green);
+            border-color: var(--fit2go-dark-green);
+        }
+        .btn-secondary:hover {
+            background-color: var(--fit2go-dark-green);
+            color: var(--fit2go-white);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://www.fit2gopt.com/wp-content/uploads/2025/05/830-gym-hero.png') no-repeat center center/cover;
+            color: var(--fit2go-white);
+            padding: 100px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 80vh;
+        }
+        .hero-content h1 {
+            color: var(--fit2go-white);
+            font-size: 3.25rem;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.65);
+            margin-bottom: 0.5em;
+        }
+        .hero-content .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2.25rem;
+            max-width: 780px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 400;
+            opacity: 0.95;
+            color: var(--fit2go-white);
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+        }
+        .hero .btn-primary {
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+        }
+
+
+        /* --- About Partnership Section --- */
+        .about-partnership .content-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 50px;
+        }
+        .about-partnership .text-content {
+            flex: 1;
+            min-width: 300px;
+        }
+        .about-partnership .image-content {
+            flex: 1;
+            min-width: 300px;
+        }
+        .about-partnership .image-content img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        }
+        .about-partnership .text-content h3 {
+            margin-bottom: 0.75em;
+            font-size: 1.75rem;
+        }
+
+        /* --- Services Section --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .service-card {
+            background-color: var(--fit2go-white);
+            padding: 35px 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.07);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.1);
+        }
+        .service-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        .service-card p {
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            flex-grow: 1; 
+        }
+        .service-card ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 10px;
+        }
+        .service-card ul li {
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            padding-left: 28px; 
+            position: relative; 
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+        .service-card ul li::before {
+            content: '✔'; 
+            color: var(--fit2go-light-green);
+            font-weight: bold; 
+            position: absolute;
+            left: 0;
+            font-size: 1.1em; 
+            top: 1px; 
+        }
+
+        /* --- Team Section --- */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 40px;
+            align-items: stretch; 
+        }
+        .team-member-card {
+            background-color: var(--fit2go-white);
+            padding: 35px 30px; 
+            border-radius: 15px; 
+            box-shadow: 0 12px 35px rgba(0,0,0,0.08); 
+            text-align: left; 
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+            display: flex; 
+            flex-direction: column;
+            border: 1px solid var(--subtle-border-color); 
+        }
+        .team-member-card:hover {
+            transform: translateY(-12px); 
+            box-shadow: 0 20px 45px rgba(20, 136, 12, 0.15); 
+        }
+        .team-member-card img {
+            width: 150px; 
+            height: 150px;
+            border-radius: 50%;
+            object-position: center center; 
+            margin-bottom: 25px; 
+            border: 4px solid var(--fit2go-light-green); 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+            align-self: center; 
+            position: relative;
+            z-index: 1; 
+        }
+        .team-member-card img.michela-img {
+            object-fit: contain; 
+            /* background: radial-gradient(ellipse at center, #f9f9f9 20%, #efefef 100%); Removed gradient */
+        }
+        .team-member-card img.jorge-img {
+             object-fit: cover; 
+             object-position: center top; 
+        }
+
+        .team-member-card h3 { /* Name */
+            font-size: 1.75rem; 
+            margin-bottom: 0.25em; 
+            text-align: center;
+            color: var(--fit2go-dark-green);
+            font-weight: 700; 
+        }
+        .team-member-card .title { /* Professional Title */
+            font-family: var(--font-headings);
+            font-size: 0.95rem; 
+            color: var(--text-primary); 
+            font-weight: 500; 
+            margin-bottom: 1rem; 
+            text-transform: uppercase;
+            letter-spacing: 1px; 
+            text-align: center;
+            opacity: 0.85; 
+        }
+        .card-divider { 
+            height: 2px;
+            background-color: var(--fit2go-light-green);
+            margin: 0 auto 1.5rem auto; 
+            width: 50px; 
+        }
+        .team-member-card .description-text { 
+            font-size: 0.95rem; 
+            color: var(--text-secondary);
+            line-height: 1.7; 
+            margin-bottom: 1.5rem; 
+            flex-grow: 1; 
+            text-align: left;
+        }
+        .credentials-heading {
+            font-family: var(--font-headings);
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--fit2go-dark-green);
+            margin-bottom: 0.75rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--subtle-border-color); 
+        }
+
+        .team-member-card .credentials {
+            list-style: none;
+            padding-left: 0; 
+            text-align: left; 
+            font-size: 0.9rem; 
+            color: var(--text-primary); 
+            margin-top: auto; 
+        }
+        .team-member-card .credentials li {
+            margin-bottom: 0.75rem; 
+            padding-left: 25px; 
+            position: relative;
+            line-height: 1.6; 
+        }
+        .team-member-card .credentials li::before {
+            content: "▹"; 
+            color: var(--fit2go-dark-green); 
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 2px; 
+            font-size: 1.1em; 
+        }
+        .team-member-card .credentials strong { 
+            font-weight: 600; 
+            color: var(--text-primary);
+        }
+        .team-member-card .credentials .degree-details {
+            display: block; 
+            font-size: 0.88em; 
+            padding-left: 0; 
+            color: var(--text-secondary); 
+            line-height: 1.5;
+            margin-top: 0.25rem;
+        }
+        .team-member-card .credentials .degree-details.concentration-title {
+            font-style: normal; 
+            font-weight: 500; 
+            color: var(--text-primary);
+            margin-top: 0.4rem;
+        }
+
+
+        /* --- As Featured In Section --- */
+        #featured h2 {
+            font-size: 1.6rem; 
+            color: #6c757d;
+            font-weight: 600; 
+            border-bottom: none; 
+            margin-bottom: 2rem;
+        }
+        .featured-logos-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 40px 55px; 
+            margin-top: 20px;
+        }
+        .featured-logos-container img {
+            max-height: 48px;
+            filter: grayscale(100%) contrast(0.5) brightness(1.3);
+            opacity: 0.65;
+            transition: filter 0.3s ease, opacity 0.3s ease;
+        }
+        .featured-logos-container img:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+
+        /* --- Final CTA Section --- */
+        .final-cta-section {
+            background: linear-gradient(rgba(20, 136, 12, 0.9), rgba(9, 210, 0, 0.9)), url('https://www.fit2gopt.com/wp-content/uploads/2025/05/media-entrance-1.jpg') no-repeat center center/cover;
+            color: var(--fit2go-white);
+            text-align: center;
+            border-radius: 15px;
+            margin: 40px auto;
+            padding: 70px 30px;
+        }
+        .final-cta-section h2 {
+            color: var(--fit2go-white);
+            border-bottom: none;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .final-cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            color: var(--fit2go-white);
+            opacity: 0.95;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .final-cta-section .btn-primary {
+            background-color: var(--fit2go-white);
+            color: var(--fit2go-dark-green);
+            border-color: var(--fit2go-white);
+            font-size: 1.15rem;
+            padding: 1.1rem 2.75rem;
+        }
+        .final-cta-section .btn-primary:hover {
+            background-color: var(--fit2go-black);
+            color: var(--fit2go-white);
+            border-color: var(--fit2go-black);
+        }
+        .final-cta-section .cta-subtext {
+            font-size: 0.95rem;
+            margin-top: 1.75rem;
+            opacity: 0.85;
+            font-weight: 500;
+        }
+
+        /* --- Footer --- */
+        .footer {
+            background-color: var(--fit2go-black);
+            color: #adb5bd;
+            padding: 60px 0 40px 0;
+            text-align: center;
+        }
+        .footer-logo {
+            max-height: 50px;
+            margin-bottom: 1.5rem;
+            filter: brightness(0) invert(1);
+        }
+        .footer p {
+            font-size: 0.9rem;
+            margin-bottom: 0.6rem;
+            color: #adb5bd;
+        }
+        .footer a {
+            color: var(--fit2go-light-green);
+            font-weight: 500;
+        }
+        .footer a:hover {
+            color: var(--fit2go-white);
+            text-decoration: underline;
+        }
+        .footer .footer-links {
+            margin-bottom: 1.25rem;
+        }
+        .footer .footer-links a {
+            margin: 0 12px;
+        }
+
+        /* --- Responsive Adjustments --- */
+        @media (max-width: 992px) {
+            h1 { font-size: 2.75rem; }
+            .hero-content h1 { font-size: 2.8rem; }
+            .hero-content .subtitle { font-size: 1.2rem; }
+            .about-partnership .text-content, .about-partnership .image-content {
+                flex-basis: 100%;
+            }
+            .about-partnership .image-content img { margin-top: 30px; }
+            
+            .navbar-container {
+                flex-wrap: wrap; 
+                position: relative; 
+            }
+            .navbar-toggler {
+                display: block; 
+                order: 1; 
+            }
+            .nav-menu {
+                display: none; 
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                background-color: var(--fit2go-white);
+                position: absolute;
+                top: 100%; 
+                left: 0;
+                padding: 1rem 0;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.08);
+                border-top: 1px solid var(--border-color);
+            }
+            .nav-menu.active { 
+                display: flex;
+            }
+            .nav-item {
+                margin-left: 0;
+                margin-bottom: 1rem;
+                width: 100%;
+                text-align: center;
+            }
+            .nav-item:last-child {
+                margin-bottom: 0;
+            }
+            .nav-link {
+                display: block;
+                padding: 0.75rem 1rem;
+                width: 100%;
+            }
+            .nav-link::after { 
+                display: none;
+            }
+            .nav-cta {
+                margin-left: 0;
+                margin-top: 0.5rem; 
+                width: auto; 
+                padding: 0 1rem; 
+            }
+             .nav-cta .btn {
+                width: auto; 
+                display: inline-block;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section { padding: 60px 0; }
+            h1 { font-size: 2.3rem; }
+            h2 { font-size: 2rem; }
+            .hero-content h1 { font-size: 2.4rem; }
+            .hero { min-height: auto; padding: 80px 0 60px; }
+            .services-grid { grid-template-columns: 1fr; }
+            .team-grid { grid-template-columns: 1fr; } 
+            .final-cta-section h2 { font-size: 2.1rem; }
+            .final-cta-section { margin-left: 15px; margin-right: 15px; padding: 50px 20px; }
+            .featured-logos-container img { max-height: 40px; }
+            .team-member-card { padding: 25px 20px; } 
+            .team-member-card img { width: 140px; height: 140px; } 
+            .team-member-card h3 { font-size: 1.5rem; } 
+            .team-member-card .title { font-size: 0.85rem; letter-spacing: 0.5px; margin-bottom: 1rem;}
+            .card-divider { margin-bottom: 1rem; width: 40px; }
+            .team-member-card .description-text { font-size: 0.9rem; flex-grow: 0; margin-bottom: 1rem; } 
+            .credentials-heading { font-size: 0.95rem; padding-top: 0.75rem; margin-bottom: 0.5rem; border-top: 1px solid var(--subtle-border-color); }
+            .team-member-card .credentials { text-align: left; margin-top:0; } 
+            .team-member-card .credentials li { padding-left: 20px; margin-bottom: 0.5rem; } 
+            .team-member-card .credentials li::before { font-size: 1.1em; top:1px; } 
+            .team-member-card .credentials .degree-details { padding-left: 0; margin-left:0; } 
+        }
+
+        @media (max-width: 576px) {
+            body { font-size: 15px; }
+            h1 { font-size: 2rem; }
+            .hero-content h1 { font-size: 2.1rem; }
+            .hero-content .subtitle { font-size: 1.05rem; }
+            .btn { padding: 0.7rem 1.5rem; font-size: 0.9rem; }
+            .hero .btn-primary { padding: 0.85rem 2rem; font-size: 1rem; }
+            .final-cta-section .btn-primary { padding: 0.9rem 1.75rem; font-size: 1rem;}
+            .footer { padding: 40px 0 30px; }
+            .team-member-card img { width: 120px; height: 120px; } 
+            .team-member-card h3 { font-size: 1.4rem; }
+            .team-member-card .title { font-size: 0.8rem;}
+            .team-member-card .description-text { font-size: 0.875rem; }
+            .team-member-card .credentials { font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="#"> 
+                <img src="https://www.fit2gopt.com/wp-content/uploads/2019/05/Contrast-logo.png" alt="Fit2Go Personal Training Logo" class="navbar-logo">
+            </a>
+            <button class="navbar-toggler" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="#team" class="nav-link">Your Team</a></li>
+                <li class="nav-item nav-cta">
+                    <a href="https://fit2go-brickell.youcanbook.me" target="_blank" class="btn btn-primary">Book Consultation</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Elevate Your Performance. Exclusively at 830 Brickell.</h1>
+                <p class="subtitle">
+                    Welcome, 830 Brickell Tenants. Fit2Go Personal Training offers a bespoke wellness experience, seamlessly integrated into your demanding schedule, right within your prestigious workplace.
+                </p>
+                <a href="https://fit2go-brickell.youcanbook.me" target="_blank" class="btn btn-primary">Schedule Your Complimentary Consultation</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="about-partnership">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <h2>A Premier Partnership for Peak Professionals</h2>
+            </div>
+            <div class="content-wrapper">
+                <div class="text-content">
+                    <h3>The Standard of Excellence, Extended to Your Wellness</h3>
+                    <p>830 Brickell represents the pinnacle of professional environments in Miami. In line with this standard, Fit2Go Personal Training has partnered with 830 Brickell to provide tenants with exclusive access to elite, professional fitness services—without everhaving to leave the building.</p>
+                    <p>This is more than just access to a gym; it's an integrated wellness solution meticulously designed for high-achievers. Our world-class services are delivered on-site within 830 Brickell's state-of-the-art fitness center, offering unparalleled convenience, privacy, and tangible results.</p>
+                    <p><strong>Your health and performance are paramount. We're here to help you optimize both.</strong></p>
+                     <a href="#services" class="btn btn-secondary" style="margin-top: 20px;">Explore Our Services</a>
+                </div>
+                <div class="image-content">
+                    <img src="https://www.fit2gopt.com/wp-content/uploads/2025/05/media-entrance-1.jpg" alt="The modern entrance of the 830 Brickell tower" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/333333?text=Image+Not+Found';">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section-bg-light">
+        <div class="container">
+            <h2>Your Exclusive Fitness & Wellness Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Private Personal Training</h3>
+                    <p>Achieve your specific goals with dedicated one-on-one coaching, hyper-personalized to your body, lifestyle, and objectives.</p>
+                    <ul>
+                        <li>Detailed Fitness & Biometric Assessments</li>
+                        <li>Personalized Program Design & Progress Tracking</li>
+                        <li>Expert Nutrition & Sustainable Habit Coaching</li>
+                        <li>Specialization in Strength, Conditioning & Fat Loss</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Semi-Private Training</h3>
+                    <p>Experience the benefits of personal training in a motivating and collaborative small group setting (2-4 individuals).</p>
+                    <ul>
+                        <li>Personalized Attention with Shared Motivation</li>
+                        <li>Cost-Effective Access to Expert Guidance</li>
+                        <li>Dynamic Workouts Tailored to Group Goals</li>
+                        <li>Perfect for Colleagues or Friends</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Small Group Fitness Classes</h3>
+                    <p>Engage in dynamic and energetic classes like our popular "Power 45," designed to challenge, invigorate, and build community.</p>
+                    <ul>
+                        <li>Signature "Power 45" High-Intensity Workouts</li>
+                        <li>Full-Body Conditioning & Functional Fitness</li>
+                        <li>Build Camaraderie with Fellow Tenants</li>
+                        <li>Convenient and Efficient Class Schedules</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Mobility & Recovery Sessions</h3>
+                    <p>Enhance movement quality, reduce pain, and accelerate recovery with our Corrective Exercise Specialists.</p>
+                    <ul>
+                        <li>Targeted Stretching & Myofascial Release</li>
+                        <li>Postural Correction & Imbalance Rectification</li>
+                        <li>Injury Prevention & Rehabilitation Support</li>
+                        <li>Improve Flexibility, Stability & Joint Health</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Private Yoga Sessions</h3>
+                    <p>Cultivate mind-body balance, reduce stress, and improve flexibility with our experienced and certified yoga instructors.</p>
+                    <ul>
+                        <li>Customized Sessions for All Experience Levels</li>
+                        <li>Focus on Mindfulness, Breathwork & Stress Reduction</li>
+                        <li>Strength, Flexibility & Balance Enhancement</li>
+                        <li>A Serene Escape, Conveniently On-Site</li>
+                    </ul>
+                </div>
+                <div class="service-card" style="background-color: var(--fit2go-dark-green); color: var(--fit2go-white);">
+                    <h3 style="color: var(--fit2go-white);">Holistic Wellness Integration</h3>
+                    <p style="color: #e0e0e0;">Our philosophy extends beyond the workout. We provide comprehensive support to seamlessly integrate healthy, high-performance habits into your demanding lifestyle, ensuring sustainable results and peak function in all facets of your life.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team">
+        <div class="container">
+            <h2>Meet Your Dedicated Fitness Leadership</h2>
+            <div class="team-grid">
+                <div class="team-member-card michela-card"> 
+                    <img src="https://www.fit2gopt.com/wp-content/uploads/2025/05/Michela-Macke-Fit2Go-Heashot-Transparent-bg.png" alt="Michela Macke, M.S. - Corporate Fitness Director" class="michela-img" onerror="this.onerror=null;this.src='https://placehold.co/150x150/cccccc/333333?text=Michela+M.';">
+                    <h3>Michela Macke, M.S.</h3>
+                    <p class="title">Corporate Fitness Director</p>
+                    <div class="card-divider"></div>
+                    <p class="description-text">Michela holds a Master of Science in Applied Physiology from the University of Miami, with dual concentrations in Sports Psychology and Strength & Conditioning. As an ACE Certified Personal Trainer and 200+ hour Yoga Instructor, she blends cutting-edge training methods with holistic wellness principles to help high performers thrive.<br><br>Michela’s experience spans Division 1 strength & conditioning, yoga for collegiate and professional athletes, and mental performance consulting — giving her a rare blend of physical and psychological expertise. This unique foundation empowers her to lead Fit2Go’s premier services at 830 Brickell for high-performing business professionals ready to optimize their health & fitness.</p>
+                    <h4 class="credentials-heading">Credentials:</h4>
+                    <ul class="credentials">
+                        <li>
+                            <strong>M.S. in Applied Physiology,</strong> University of Miami
+                            <span class="degree-details concentration-title">Concentrations:</span>
+                            <span class="degree-details">Sports Psychology and Strength & Conditioning</span>
+                        </li>
+                        <li><strong>ACE-Certified Personal Trainer</strong> (ACE-CPT)</li>
+                        <li><strong>200-hour Registered Yoga Instructor</strong></li>
+                    </ul>
+                </div>
+                <div class="team-member-card">
+                    <img src="https://www.fit2gopt.com/wp-content/uploads/2025/05/fit2go-brickell-trainer-web.jpg" alt="Jorge Roman, Fit2Go Lead Trainer" class="jorge-img" onerror="this.onerror=null;this.src='https://placehold.co/150x150/cccccc/333333?text=Jorge+R.';"> 
+                    <h3>Jorge Roman</h3>
+                    <p class="title">Lead Trainer & Group Fitness Coach</p>
+                    <div class="card-divider"></div>
+                    <p class="description-text">Jorge is a dynamic and highly sought-after ISSA-CPT, certified nutritionist, and health coach. Celebrated for his energetic "Power 45" workouts and exceptional ability to motivate clients, he brings unparalleled passion, expertise, and a focus on functional strength to every session, helping tenants build robust health and endurance.<br><br>With a foundation in neuroscience and practical experience in developing targeted wellness programs, he empowers clients to make lasting lifestyle improvements. He specializes in creating personalized plans that encompass fitness, nutrition, and positive behavioral strategies.</p>
+                    <h4 class="credentials-heading">Credentials:</h4>
+                    <ul class="credentials">
+                        <li><strong>B.A. in Neuroscience,</strong> Kenyon College</li>
+                        <li><strong>ISSA Certified Personal Trainer</strong> (ISSA-CPT)</li>
+                        <li><strong>ISSA Certified Nutritionist</strong></li>
+                        <li><strong>Certified Health Coach,</strong> Primal Health Coach Institute (NBHWC-accredited)</li>
+                        <li><strong>Certified Pain-Free Performance Specialist</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="featured" class="section-bg-light">
+        <div class="container">
+            <h2>Fit2Go: Trusted By Leading Publications</h2>
+            <div class="featured-logos-container">
+                <img src="https://www.fit2gopt.com/wp-content/uploads/2025/05/shape-magazine-logo-fit2go-personal-training-press-feature.webp" alt="Shape Magazine Logo" onerror="this.onerror=null;this.src='https://placehold.co/150x48/cccccc/333333?text=Shape';">
+                <img src="https://www.fit2gopt.com/wp-content/uploads/2025/05/self-magazine-logo-fit2go-fitness-media-feature.png" alt="Self Magazine Logo" onerror="this.onerror=null;this.src='https://placehold.co/150x48/cccccc/333333?text=Self';">
+                <img src="https://www.fit2gopt.com/wp-content/uploads/2025/05/readers-digest-logo-fit2go-trusted-publication-feature.png" alt="Reader's Digest Logo" onerror="this.onerror=null;this.src='https://placehold.co/150x48/cccccc/333333?text=Reader%27s+Digest';">
+                <img src="https://www.fit2gopt.com/wp-content/uploads/2025/05/muscle-and-fitness-logo-fit2go-media-feature.png" alt="Muscle & Fitness Logo" onerror="this.onerror=null;this.src='https://placehold.co/150x48/cccccc/333333?text=Muscle+%26+Fitness';">
+                <img src="https://www.fit2gopt.com/wp-content/uploads/2025/05/glamour-magazine-logo-fit2go-press-feature.png" alt="Glamour Magazine Logo" onerror="this.onerror=null;this.src='https://placehold.co/150x48/cccccc/333333?text=Glamour';">
+                <img src="https://www.fit2gopt.com/wp-content/uploads/2025/05/US-News-World-Report-Logo.png" alt="U.S. News & World Report Logo" onerror="this.onerror=null;this.src='https://placehold.co/150x48/cccccc/333333?text=US+News';">
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta-section container">
+        <div>
+            <h2>Ready to Transform Your Health & Performance?</h2>
+            <p>
+                Take the first step towards a stronger, healthier, and more productive you.
+                Your exclusive, complimentary fitness consultation at 830 Brickell is waiting.
+            </p>
+            <a href="https://fit2go-brickell.youcanbook.me" target="_blank" class="btn btn-primary">
+                Book Your Consultation Now
+            </a>
+            <p class="cta-subtext">This premium service is exclusively for tenants of 830 Brickell.</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <img src="https://www.fit2gopt.com/wp-content/uploads/2019/05/Contrast-logo.png" alt="Fit2Go Personal Training Logo - White Version" class="footer-logo" onerror="this.onerror=null;this.src='https://placehold.co/200x50/cccccc/333333?text=Fit2Go+Logo';">
+            <p><strong>Fit2Go Personal Training at 830 Brickell</strong></p>
+            <p>Delivering elite fitness solutions for a high-performance lifestyle.</p>
+            <div class="footer-links">
+                <a href="https://www.fit2gopt.com/" target="_blank">Fit2Go Main Website</a> |
+                <a href="https://www.fit2gopt.com/privacy-policy/" target="_blank">Privacy Policy</a> |
+                <a href="#">Terms of Service</a>
+            </div>
+            <p>© 2024 Fit2Go Personal Training. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for toggling the mobile menu
+        const navbarToggler = document.querySelector('.navbar-toggler');
+        const navMenu = document.querySelector('.nav-menu');
+
+        if (navbarToggler && navMenu) {
+            navbarToggler.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                navbarToggler.classList.toggle('active'); // For animating the hamburger icon itself
+                // Update aria-expanded attribute for accessibility
+                const isExpanded = navMenu.classList.contains('active');
+                navbarToggler.setAttribute('aria-expanded', isExpanded);
+            });
+
+            // Optional: Close menu when a nav link is clicked (for single-page apps)
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                        navbarToggler.classList.remove('active');
+                        navbarToggler.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html>
