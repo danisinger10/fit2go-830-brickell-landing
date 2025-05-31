@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Exclusive personal training and wellness services for tenants of 830 Brickell, offered by Fit2Go. Schedule your complimentary fitness consultation today.">
     <title>Exclusive Fitness for 830 Brickell Tenants | Fit2Go Personal Training</title>
-    <!-- <link rel="icon" href="path/to/your/favicon.ico"> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -137,6 +136,52 @@
         .nav-cta {
             margin-left: 28px;
         }
+
+        /* Hamburger Menu Button */
+        .navbar-toggler {
+            display: none; /* Hidden by default, shown on mobile */
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--fit2go-black);
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        .navbar-toggler-icon { /* Simple hamburger icon lines */
+            display: block;
+            width: 22px;
+            height: 2px;
+            background-color: var(--fit2go-black);
+            position: relative;
+            transition: background-color 0.3s ease;
+        }
+        .navbar-toggler-icon::before,
+        .navbar-toggler-icon::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--fit2go-black);
+            transition: transform 0.3s ease;
+        }
+        .navbar-toggler-icon::before {
+            top: -7px;
+        }
+        .navbar-toggler-icon::after {
+            bottom: -7px;
+        }
+        /* Active state for hamburger (turns into X) */
+        .navbar-toggler.active .navbar-toggler-icon {
+            background-color: transparent; /* Middle line disappears */
+        }
+        .navbar-toggler.active .navbar-toggler-icon::before {
+            transform: translateY(7px) rotate(45deg);
+        }
+        .navbar-toggler.active .navbar-toggler-icon::after {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
 
         /* --- Buttons --- */
         .btn {
@@ -447,11 +492,59 @@
                 flex-basis: 100%;
             }
             .about-partnership .image-content img { margin-top: 30px; }
-            .navbar-container { flex-direction: column; align-items: center; }
-            .nav-menu { margin-top: 20px; flex-direction: column; align-items: center; width: 100%;}
-            .nav-item { margin-left: 0; margin-bottom: 12px; width: auto; } 
-            .nav-link { display: block; padding: 8px 10px; text-align: center; } 
-            .nav-cta { margin-left: 0; margin-top:15px; display:block; text-align:center;}
+            
+            /* Navbar mobile styles */
+            .navbar-container {
+                flex-wrap: wrap; /* Allow toggler to wrap if needed, though space-between should handle it */
+                position: relative; /* For absolute positioning of nav-menu */
+            }
+            .navbar-toggler {
+                display: block; /* Show hamburger */
+                order: 1; /* Ensure it's after the logo if flex order matters */
+            }
+            .nav-menu {
+                display: none; /* Hide menu by default on mobile */
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                background-color: var(--fit2go-white);
+                position: absolute;
+                top: 100%; /* Position below the navbar */
+                left: 0;
+                padding: 1rem 0;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.08);
+                border-top: 1px solid var(--border-color);
+            }
+            .nav-menu.active { /* Class to show the menu */
+                display: flex;
+            }
+            .nav-item {
+                margin-left: 0;
+                margin-bottom: 1rem;
+                width: 100%;
+                text-align: center;
+            }
+            .nav-item:last-child {
+                margin-bottom: 0;
+            }
+            .nav-link {
+                display: block;
+                padding: 0.75rem 1rem;
+                width: 100%;
+            }
+            .nav-link::after { /* Remove underline animation for mobile */
+                display: none;
+            }
+            .nav-cta {
+                margin-left: 0;
+                margin-top: 0.5rem; /* Reduced margin */
+                width: auto; /* Allow button to size naturally */
+                padding: 0 1rem; /* Add some padding for the button within the list item */
+            }
+             .nav-cta .btn {
+                width: auto; /* Make button take its content width */
+                display: inline-block;
+            }
         }
 
         @media (max-width: 768px) {
@@ -487,6 +580,9 @@
             <a href="#"> 
                 <img src="https://www.fit2gopt.com/wp-content/uploads/2019/05/Contrast-logo.png" alt="Fit2Go Personal Training Logo" class="navbar-logo">
             </a>
+            <button class="navbar-toggler" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <ul class="nav-menu">
                 <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
@@ -524,7 +620,7 @@
                      <a href="#services" class="btn btn-secondary" style="margin-top: 20px;">Explore Our Services</a>
                 </div>
                 <div class="image-content">
-                    <img src="https://www.fit2gopt.com/wp-content/uploads/2025/05/media-entrance-1.jpg" alt="The modern entrance of the 830 Brickell tower">
+                    <img src="https://www.fit2gopt.com/wp-content/uploads/2025/05/media-entrance-1.jpg" alt="The modern entrance of the 830 Brickell tower" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/333333?text=Image+Not+Found';">
                 </div>
             </div>
         </div>
@@ -597,13 +693,13 @@
             <h2>Meet Your Dedicated Fitness Leadership</h2>
             <div class="team-grid">
                 <div class="team-member-card">
-                    <img src="https://www.fit2gopt.com/wp-content/uploads/2025/05/michela_830brickell_masterfinal_approved-1.jpg" alt="Michela Macke, M.S. - Director of Fitness Operations at Fit2Go for 830 Brickell">
+                    <img src="https://www.fit2gopt.com/wp-content/uploads/2025/05/michela_830brickell_masterfinal_approved-1.jpg" alt="Michela Macke, M.S. - Director of Fitness Operations at Fit2Go for 830 Brickell" onerror="this.onerror=null;this.src='https://placehold.co/180x180/cccccc/333333?text=Michela+M.';">
                     <h3>Michela Macke, M.S.</h3>
                     <p class="title">Director of Fitness Operations, 830 Brickell</p>
                     <p>With a Master of Science in Exercise Science and a wealth of experience in corporate wellness program management and elite personal training, Michela spearheads all Fit2Go operations at 830 Brickell. She is passionately committed to delivering a premium, results-driven, and client-centric fitness experience for every tenant.</p>
                 </div>
                 <div class="team-member-card">
-                    <img src="https://www.fit2gopt.com/wp-content/uploads/2025/05/jorge-830-class-wide.jpg" alt="Jorge Roman, Fit2Go Lead Trainer, in the 830 Brickell fitness center">
+                    <img src="https://www.fit2gopt.com/wp-content/uploads/2025/05/jorge-830-class-wide.jpg" alt="Jorge Roman, Fit2Go Lead Trainer, in the 830 Brickell fitness center" onerror="this.onerror=null;this.src='https://placehold.co/180x180/cccccc/333333?text=Jorge+R.';">
                     <h3>Jorge Roman</h3>
                     <p class="title">Lead Trainer & Group Fitness Coach</p>
                     <p>Jorge is a dynamic and highly sought-after CES certified trainer, celebrated for his energetic "Power 45" workouts and his exceptional ability to motivate clients to surpass their limits. He brings unparalleled passion, expertise, and a focus on functional strength to every session, helping tenants build robust health and endurance.</p>
@@ -616,11 +712,11 @@
         <div class="container">
             <h2>Fit2Go: Trusted By Leading Publications</h2>
             <div class="featured-logos-container">
-                <img src="https://www.fit2gopt.com/wp-content/uploads/2025/05/shape-magazine-logo-fit2go-personal-training-press-feature.webp" alt="Shape Magazine Logo">
-                <img src="https://www.fit2gopt.com/wp-content/uploads/2025/05/self-magazine-logo-fit2go-fitness-media-feature.png" alt="Self Magazine Logo">
-                <img src="https://www.fit2gopt.com/wp-content/uploads/2025/05/readers-digest-logo-fit2go-trusted-publication-feature.png" alt="Reader's Digest Logo">
-                <img src="https://www.fit2gopt.com/wp-content/uploads/2025/05/muscle-and-fitness-logo-fit2go-media-feature.png" alt="Muscle & Fitness Logo">
-                <img src="https://www.fit2gopt.com/wp-content/uploads/2025/05/glamour-magazine-logo-fit2go-press-feature.png" alt="Glamour Magazine Logo">
+                <img src="https://www.fit2gopt.com/wp-content/uploads/2025/05/shape-magazine-logo-fit2go-personal-training-press-feature.webp" alt="Shape Magazine Logo" onerror="this.onerror=null;this.src='https://placehold.co/150x48/cccccc/333333?text=Shape';">
+                <img src="https://www.fit2gopt.com/wp-content/uploads/2025/05/self-magazine-logo-fit2go-fitness-media-feature.png" alt="Self Magazine Logo" onerror="this.onerror=null;this.src='https://placehold.co/150x48/cccccc/333333?text=Self';">
+                <img src="https://www.fit2gopt.com/wp-content/uploads/2025/05/readers-digest-logo-fit2go-trusted-publication-feature.png" alt="Reader's Digest Logo" onerror="this.onerror=null;this.src='https://placehold.co/150x48/cccccc/333333?text=Reader%27s+Digest';">
+                <img src="https://www.fit2gopt.com/wp-content/uploads/2025/05/muscle-and-fitness-logo-fit2go-media-feature.png" alt="Muscle & Fitness Logo" onerror="this.onerror=null;this.src='https://placehold.co/150x48/cccccc/333333?text=Muscle+%26+Fitness';">
+                <img src="https://www.fit2gopt.com/wp-content/uploads/2025/05/glamour-magazine-logo-fit2go-press-feature.png" alt="Glamour Magazine Logo" onerror="this.onerror=null;this.src='https://placehold.co/150x48/cccccc/333333?text=Glamour';">
             </div>
         </div>
     </section>
@@ -641,7 +737,7 @@
 
     <footer class="footer">
         <div class="container">
-            <img src="https://www.fit2gopt.com/wp-content/uploads/2019/05/Contrast-logo.png" alt="Fit2Go Personal Training Logo - White Version" class="footer-logo">
+            <img src="https://www.fit2gopt.com/wp-content/uploads/2019/05/Contrast-logo.png" alt="Fit2Go Personal Training Logo - White Version" class="footer-logo" onerror="this.onerror=null;this.src='https://placehold.co/200x50/cccccc/333333?text=Fit2Go+Logo';">
             <p><strong>Fit2Go Personal Training at 830 Brickell</strong></p>
             <p>Delivering elite fitness solutions for a high-performance lifestyle.</p>
             <div class="footer-links">
@@ -653,5 +749,32 @@
         </div>
     </footer>
 
+    <script>
+        // JavaScript for toggling the mobile menu
+        const navbarToggler = document.querySelector('.navbar-toggler');
+        const navMenu = document.querySelector('.nav-menu');
+
+        if (navbarToggler && navMenu) {
+            navbarToggler.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                navbarToggler.classList.toggle('active'); // For animating the hamburger icon itself
+                // Update aria-expanded attribute for accessibility
+                const isExpanded = navMenu.classList.contains('active');
+                navbarToggler.setAttribute('aria-expanded', isExpanded);
+            });
+
+            // Optional: Close menu when a nav link is clicked (for single-page apps)
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                        navbarToggler.classList.remove('active');
+                        navbarToggler.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            });
+        }
+    </script>
 </body>
 </html>
